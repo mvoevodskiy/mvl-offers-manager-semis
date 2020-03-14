@@ -1,20 +1,28 @@
 const {MVLoaderBase} = require('mvloader');
 
-class MVLBlankSemis extends MVLoaderBase{
+class mvlOffersManagerSemis extends MVLoaderBase{
     static exportConfig = {
         ext: {
             classes: {
                 semis: {},
-                controllers: {},
+                controllers: {
+                    mvlOffersManager: require('./controllers/mvloffermanagercontroller')
+                },
                 handlers: {},
             },
             configs: {
                 controllers: {},
                 handlers: {
+                    BotHandler: {
+                        schemaFiles: [
+                            __dirname + '/botschemas/main.yml',
+                        ],
+                    },
                     DBHandler: {
                         sequelize: {},
                         models: {
-                            // MVLExampleModel: require('./models/mvlblankexample'),
+                            mvlOffer: require('./models/mvlOffer'),
+                            mvlOfferResponse: require('./models/mvlOfferResponse'),
                         }
                     }
                 },
@@ -42,4 +50,4 @@ class MVLBlankSemis extends MVLoaderBase{
 
 }
 
-module.exports = MVLBlankSemis;
+module.exports = mvlOffersManagerSemis;
