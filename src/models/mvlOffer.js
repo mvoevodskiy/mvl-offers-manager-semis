@@ -17,19 +17,20 @@ module.exports = (Sequelize) => {
                     as: 'Author',
                 }
             ],
-            'belongsToMany': [
-                {
-                    model: 'mvlUser',
-                    as: 'Respondents',
-                    through: {
-                        model: 'mvlOfferResponse'
-                    },
-                }
-            ],
+            // 'belongsToMany': [
+            //     {
+            //         model: 'mvlUser',
+            //         as: 'Respondents',
+            //         through: {
+            //             model: 'mvlOfferResponse'
+            //         },
+            //     }
+            // ],
             'hasMany': [
                 {
                     model: 'mvlOfferResponse',
                     as: 'Responses',
+                    foreignKey: 'OfferId',
                 },
             ],
 

@@ -5,16 +5,16 @@ module.exports = (Sequelize) => {
         {},
         // Model associations
         {
-            // 'belongsTo': [
-            //     {
-            //         model: 'mvlOffer',
-            //         as: 'Offer'
-            //     },
-            //     {
-            //         model: 'mvlUser',
-            //         as: 'User',
-            //     }
-            // ]
+            'belongsTo': [
+                {
+                    model: 'mvlOffer',
+                    as: 'Offer'
+                },
+                {
+                    model: 'mvlUser',
+                    as: 'User',
+                }
+            ]
         }
     ];
 };
