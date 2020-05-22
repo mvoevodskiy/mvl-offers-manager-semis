@@ -5,6 +5,10 @@ module.exports = (Sequelize) => {
             geo: Sequelize.STRING,
             type: Sequelize.STRING(20),
             amount: Sequelize.DECIMAL(11,2),
+            active: {
+                type: Sequelize.BOOLEAN,
+                defaultValue: true,
+            },
             description: Sequelize.TEXT,
         },
         // Model options
